@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesamiento</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body style="background: #CCCCCC">
+    <div class="window" style="width: 40vw; height: 60vh; background: gray; display: flex;  margin-left:25rem; margin-top: 2rem; border-radius: 1rem; font-family: Arial;" >
+        <div class="info">
+            <h3 style="margin-left: 6.4rem; color: white;">Procesamiento de lenguaje natural</h3>
+            <h4 style="margin-top: 0.5rem; margin-left: 1rem; color: white;">Lista de narrativas:</h4>
+            <select style="margin-left: 5.4rem; background: #333333; border-radius: 1.2rem; height: 1.5rem; color: white;">
+                {% for narrativa in narrativas %}
+                    <option value="{{ narrativa.id }}">Narrativa {{narrativa.id }}</option>
+                {% endfor %}
+            </select>
+            {% if not narrativas %}
+                <p>No hay narrativas disponibles.</p>
+            {% endif %}
+            <div style="margin-top: 2rem; margin-right: auto;">
+                <input type="text" placeholder="Escribe tu pregunta" style="width: 20rem; margin-left: 0.5rem;">
+                <input type="submit" value="Enviar" style="background: #333333; border-radius: 0.5rem; width: 4.2rem; height: 1.5rem; color: white; justify-content: center; align-items: center;">
+                <textarea  style="margin-left: 5rem; width: 22.5rem; margin-top: 2rem; height: 10rem;"></textarea>
+            </div>
+        </div>
+       
+        
+
+    </div>
+    
+    
+</body>
+</html>
